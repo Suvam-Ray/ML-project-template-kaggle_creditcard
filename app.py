@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from joblib import load
 from pydantic import BaseModel
+import pathlib
 
 app = FastAPI()
 
@@ -40,8 +41,8 @@ class PredictionInput(BaseModel):
 
 
 # Load the pre-trained RandomForest model
-model_path = "model.joblib"
-model = load(model_path)
+model_path = "./models/model.joblib"
+model = load(pathlib.Path(model_path))
 
 @app.get("/")
 def home():
@@ -87,4 +88,4 @@ def predict(input_data: PredictionInput):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
