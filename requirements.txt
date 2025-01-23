@@ -4,3 +4,4 @@ joblib
 uvicorn
 gunicorn
 scikit-learn
+streamlit
