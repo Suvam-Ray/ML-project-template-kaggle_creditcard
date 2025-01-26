@@ -1,4 +1,6 @@
 [core]
-    remote = remote
+    remote = s3remote
 ['remote "remote"']
     url = C:\Users\suvam\Desktop\IT Return related docs\Suvam Learning and Training notes\004_MLOps\Sample project\fake_cloud_location\ML-project-template-kaggle_creditcard
+['remote "s3remote"']
+    url = s3://dvc-remote-storage-1/ML-project-template-kaggle_creditcard/
